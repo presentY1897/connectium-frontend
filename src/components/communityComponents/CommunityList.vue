@@ -5,24 +5,40 @@
 			<div class="list-container">
 				<div class="list-warpper">
 					<div class="commponent-title">
-						<h1 class="community-title">우리아이 커뮤니티</h1>
+						<h1 class="community-title">{{category == null ? "우리아이" : category}} 커뮤니티</h1>
 						<p class="community-subtitle">우리아이를 돌아보세요!</p>
 					</div>
 				</div>
-				<CommunityCategoryFilterSelector :showImage = "true"/>
+				<CommunityCategoryFilterSelector :showImage="category == null"/>
+				<div class="list-container">
+					<div class="list-Line">
+						<div v-for="post in filteredPosts" :key="post.id" class="post-item">
+							<router-link :to="{ name: 'CommunityDetail', params: { id: post.id } }" class="post-item-wrapper">
+								<span class="post-category">{{ post.category }}</span>
+								<div>
+									<h3 class="list-title">{{ post.title }}</h3>
+								</div>
+								<div class="list-ediNdelNcount">
+									<span class="post-view-count">조회수: {{ post.viewCount }}</span>
+									<span class="post-author">{{ post.authorName }}</span>
+								</div>
+							</router-link>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="background-image"></div>
 		</div>
 	</div>
 </template>
-
 <script setup>
 import '@/assets/css/community_list.css'
 import '@/assets/css/post_list.css'
 import MainTop from '@/components/MainTop.vue'
 
 import api from '@/services/api';
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
 import CommunityCategoryFilterSelector from './CommunityCategoryFilterSelector.vue';
 
 const posts = ref([])
@@ -39,4 +55,15 @@ const fetchPosts = async () => {
 onMounted(async () => {
 	await fetchPosts();
 })
+
+const route = useRoute();
+const category = computed(() => route.params.category);
+
+const filteredPosts = computed(() => {
+	const category = route.params.category;
+	if (category) {
+		return posts.value.filter(post => post.category === category);
+	}
+	return posts.value;
+});
 </script>

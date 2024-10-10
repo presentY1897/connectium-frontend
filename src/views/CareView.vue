@@ -1,7 +1,7 @@
 <template>
-    <MainTop />
-    <br>
-    <CareList />
+	<MainTop />
+	<br>
+	<CareList />
 </template>
 
 <script setup>

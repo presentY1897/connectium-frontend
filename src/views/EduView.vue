@@ -1,7 +1,7 @@
 <template>
-    <MainTop />
-    <br>
-    <EducationList />
+	<MainTop />
+	<br>
+	<EducationList />
 </template>
 
 <script setup>

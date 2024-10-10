@@ -1,7 +1,7 @@
 <template>
-    <MainTop />
-    <br>
-    <ParkList />
+	<MainTop />
+	<br>
+	<ParkList />
 </template>
 
 <script setup>

@@ -2,7 +2,7 @@
 	<div class="content-wrapper">
 		<div class="category-buttons">
 			<router-link v-for="category in categories" :key="category.value"
-				:to="{ name: 'FilteredCommunity', params: { category: category.value } }">
+				:to="{ name: 'CommunityList', params: { category: category.value } }">
 				<div class="btn-container" :class="{ active: isActive }">
 					<button>
 						<div class="category-image-container">

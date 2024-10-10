@@ -17,7 +17,6 @@ import Register from "@/components/loginComponents/Register.vue";
 import EduView from "@/views/EduView.vue";
 import EducationDetail from "@/components/educationComponents/EducationDetail.vue";
 import ProgramList from "@/components/programComponents/ProgramList.vue";
-import FilteredCommunityList from "@/components/communityComponents/FilteredCommunityList.vue";
 import MyPage from "@/views/MyPage.vue";
 import WeatherWidget from "@/components/weatherComponents/WeatherWidget.vue";
 import ProgramDetail from "@/components/programComponents/ProgramDetail.vue";
@@ -27,141 +26,141 @@ import CareView from "@/views/CareView.vue";
 import CareList from "@/components/careComponents/CareList.vue";
 
 const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: HomeView,
-  },
-  {
+	{
+		path: "/",
+		name: "Home",
+		component: HomeView,
+	},
+	{
 
-    path: '/weather-Widget',
-    name: 'WeatherWidget',
-    component: WeatherWidget, 
+		path: '/weather-Widget',
+		name: 'WeatherWidget',
+		component: WeatherWidget,
 
-  },
-  {
-    path: "/postList",
-    name: "PostList",
-    component: QnAView,
-  },
-  {
-    path: "/post/create",
-    name: "PostCreate",
-    component: PostCreate,
-  },
-  {
-    path: "/post/:id",
-    name: "PostView",
-    component: PostView,
-  },
-  {
-    path: "/post/:id/edit",
-    name: "PostEdit",
-    component: PostEdit,
-  },
-  {
-    path: "/program",
-    name: "프로그램",
-    component: ProgramListView,
-  },
-  {
-    path: "/program/:type/:svcid",
-    name: "programDetail",
-    component: ProgramDetail,
-  },
-  {
-    path: "/program/all",
-    name: "programList",
-    component: ProgramList,
-  },
-  {
-    path: "/community",
-    name: "우리아이커뮤니티",
-    component: CommunityList,
-  },
-  {
-    path: "/community/filtered/:category",
-    name: "FilteredCommunity",
-    component: FilteredCommunityList,
-    props: true
-  },
-  {
-    path: "/community/create",
-    name: "CommunityCreate",
-    component: CommunityCreate,
-  },
-  {
-    path: "/community/:id",
-    name: "CommunityDetail",
-    component: CommunityDetail,
-    props: true,
-  },
-  {
-    path: "/community/edit/:id",
-    name: "CommunityEdit",
-    component: CommunityEdit,
-  },
-  {
-    path: "/outdoor/park",
-    name: "신나는 우리동네",
-    component: ParkView,
-  },
-  {
-    path: "/outdoor/park/:id",
-    name: "ParkDetail",
-    component: ParkDetail,
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: Login,
-  },
-  {
-    path: "/register",
-    name: "register",
-    component: Register,
-  },
-  {
-    path: "/education",
-    name: "jun",
-    component: EduView,
-  },
-  {
-    path: "/education/:id",
-    name: "junDetail",
-    component: EducationDetail,
-  },
-  {
-    path: "/mypage",
-    name: "mypage",
-    component: MyPage,
-  },
-  {
-    path: '/weather-popup',
-    name: 'WeatherPopup',
-    component: WeatherPopup
-  },
-  {
-    path: '/care',
-    name: 'careList',
-    component: CareList
-  },
-  {
-    path: '/careview',
-    name: 'careview',
-    component: CareView
-  },
-  {
-    path: '/care/:id',
-    name: 'CareDetail',
-    component: CareDetail
-  },
+	},
+	{
+		path: "/postList",
+		name: "PostList",
+		component: QnAView,
+	},
+	{
+		path: "/post/create",
+		name: "PostCreate",
+		component: PostCreate,
+	},
+	{
+		path: "/post/:id",
+		name: "PostView",
+		component: PostView,
+	},
+	{
+		path: "/post/:id/edit",
+		name: "PostEdit",
+		component: PostEdit,
+	},
+	{
+		path: "/program",
+		name: "프로그램",
+		component: ProgramListView,
+	},
+	{
+		path: "/program/:type/:svcid",
+		name: "programDetail",
+		component: ProgramDetail,
+	},
+	{
+		path: "/program/all",
+		name: "programList",
+		component: ProgramList,
+	},
+	{
+		path: "/community",
+		name: "우리아이커뮤니티",
+		component: CommunityList,
+	},
+	{
+		path: "/community/:category",
+		name: "CommunityList",
+		component: CommunityList,
+		props: true
+	},
+	{
+		path: "/community/create",
+		name: "CommunityCreate",
+		component: CommunityCreate,
+	},
+	{
+		path: "/community/:id",
+		name: "CommunityDetail",
+		component: CommunityDetail,
+		props: true,
+	},
+	{
+		path: "/community/edit/:id",
+		name: "CommunityEdit",
+		component: CommunityEdit,
+	},
+	{
+		path: "/outdoor/park",
+		name: "신나는 우리동네",
+		component: ParkView,
+	},
+	{
+		path: "/outdoor/park/:id",
+		name: "ParkDetail",
+		component: ParkDetail,
+	},
+	{
+		path: "/login",
+		name: "Login",
+		component: Login,
+	},
+	{
+		path: "/register",
+		name: "register",
+		component: Register,
+	},
+	{
+		path: "/education",
+		name: "jun",
+		component: EduView,
+	},
+	{
+		path: "/education/:id",
+		name: "junDetail",
+		component: EducationDetail,
+	},
+	{
+		path: "/mypage",
+		name: "mypage",
+		component: MyPage,
+	},
+	{
+		path: '/weather-popup',
+		name: 'WeatherPopup',
+		component: WeatherPopup
+	},
+	{
+		path: '/care',
+		name: 'careList',
+		component: CareList
+	},
+	{
+		path: '/careview',
+		name: 'careview',
+		component: CareView
+	},
+	{
+		path: '/care/:id',
+		name: 'CareDetail',
+		component: CareDetail
+	},
 
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+	history: createWebHistory(process.env.BASE_URL),
+	routes,
 });
 
 // 네비게이션 가드

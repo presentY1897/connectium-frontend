@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-
-     
-    
-
-
     <router-view/>
   </div>
 </template>
@@ -29,4 +24,3 @@ export default {
   margin-top: 20px;
 }
 </style>
-
